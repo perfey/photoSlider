@@ -6,7 +6,7 @@
  * http://www.j--d.com/photoSlider/
  * Edit By Damon
  * 2015-06-28
- * 
+ * http://perfey.github.io/photoSlider/index.html
  * */
 function photoSlider(options) {
 	this.wrap = options.wrap;
