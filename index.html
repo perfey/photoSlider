@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>移动端轮播图组件</title>
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="keywords" content="javascript,移动端,轮播图,组件,touch" />
+<meta name="description" content="javascript移动端轮播图滑动插件" />
+<style type="text/css">
+	html, body, div, ul, li, a, img {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	html, body {
+		width: 100%;
+		font-size: 100%;
+		/*background-color: #ccc;*/
+	}
+	img {
+		display: block;
+	}
+	p {
+		margin: 0;
+		padding: 1rem 1rem;
+		font-size: 1rem;
+		line-height: 1.4;
+	}
+	.pagination {
+		width: 100%;
+		left: 0;
+		bottom: 10px;
+		position: absolute;
+		text-align: center;
+		-webkit-transition: 300ms;
+		transition: 300ms;
+		z-index: 10;
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+	}
+	.pagination span {
+		width: 8px;
+		height: 8px;
+		display: inline-block;
+		border-radius: 100%;
+		background: #fff;
+		opacity: .5;
+		margin: 0 3px;
+	}
+	.pagination span.active {
+		opacity: 1;
+		background: #007AFF;
+	}
+	.pic-panel {
+		width: 100%;
+		position: relative;
+		overflow: hidden;
+	}
+	.pic-list {
+		width: 100%;
+		position: relative;
+	}
+	.pic-list li {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+	}
+	.pic-list .re {
+		position: relative;
+		z-index: 2;
+	}
+	.pic-list li img {
+		width: 100%;
+	}
+	@media screen and (min-width: 600px) {
+		.pic-box {
+			position: relative;
+			top: 0;
+			left: 25%;
+			width: 50%;
+		}
+		.pic-list li:nth-child(2) {
+			left: 100%;
+		}
+		.pic-list li:last-child {
+			left: -100%;
+		}
+		.pic-list li img {
+			padding: 0 0.125rem;
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+	}
+</style>
+</head>
+<body>
+	<div id="picPanel" class="pic-panel">
+		<div id="picBox" class="pic-box">
+			<ul id="picList" class="pic-list">
+				<li class="re">
+					<a href="#">
+						<img src="img/1.jpg" />
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="img/2.jpg" />
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="img/3.jpg" />
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="img/4.jpg" />
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<p>JavaScript一种直译式脚本语言，是一种动态类型、弱类型、基于原型的语言，内置支持类型。它的解释器被称为JavaScript引擎，为浏览器的一部分，广泛用于客户端的脚本语言，最早是在HTML（标准通用标记语言下的一个应用）网页上使用，用来给HTML网页增加动态功能。</p>
+	<p>在1995年时，由Netscape公司的Brendan Eich，在网景导航者浏览器上首次设计实现而成。因为Netscape与Sun合作，Netscape管理层希望它外观看起来像Java，因此取名为JavaScript。但实际上它的语法风格与Self及Scheme较为接近。</p>
+	<p>为了取得技术优势，微软推出了JScript，CEnvi推出ScriptEase，与JavaScript同样可在浏览器上运行。为了统一规格，因为JavaScript兼容于ECMA标准，因此也称为ECMAScript。</p>
+	<script src="photoSlider-1.21.js"></script>
+	<script>
+		document.addEventListener('DOMContentLoaded',function(){
+			photoSlide({
+				wrap: document.getElementById('picBox'),
+				loop: true,
+				autoPlay: true,
+				autoTime: 4000,
+				pagination: true
+			});
+		}, false);
+	</script>
+</body>
+</html>
